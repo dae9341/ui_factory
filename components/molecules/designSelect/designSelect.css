@@ -1,0 +1,47 @@
+.designSelect {
+  position: relative;
+}
+.designSelect-select {
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  background-color: #fff;
+  border: 1px solid #d1d1d1;
+  cursor: pointer;
+}
+.designSelect-select:hover {
+  background-color: #eee;
+}
+.designSelect-option {
+  width: 100%;
+  display: none;
+  border-radius: 5px;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  border: 1px solid #d1d1d1;
+  overflow: hidden;
+}
+.designSelect-option.active {
+  display: block;
+}
+.designSelect-option-label {
+  width: 100%;
+}
+.designSelect-option-label label {
+  width: 100%;
+  cursor: pointer;
+  display: block;
+  border-bottom: 1px solid #d1d1d1;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.designSelect-option-label label:hover {
+  background-color: #eee;
+}
+.designSelect-option-label:last-child label {
+  border-bottom: 0;
+}
+.designSelect-option-label input[type=radio] {
+  display: none;
+}

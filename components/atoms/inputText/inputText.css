@@ -1,0 +1,14 @@
+.input-text {
+  border: 1px solid #d1d1d1;
+  height: 40px;
+  width: 100%;
+  padding: 0 14px;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+.input-text[readonly] {
+  background-color: #efefef;
+}
+.input-text[disabled] {
+  background-color: #efefef;
+}

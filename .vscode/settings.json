@@ -1,0 +1,13 @@
+{
+    "liveSassCompile.settings.forceBaseDirectory": [
+        {
+            "format":"expanded",
+            "extensionName":".css",
+            "savePath":"~/../"
+        }
+    ],
+    "liveSassCompile.settings.generateMap": false,
+    "liveSassCompile.settings.includeItems": [
+        "components/**/**/*.scss"
+    ]
+}

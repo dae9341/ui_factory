@@ -3,12 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="resources/css/reset.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <title>UI FACTORY</title>
 </head>
 <body>
-    <h1>
-        UI Factory
-    </h1>
-    
+    <script>
+        $(function(){
+            $.ajax({
+                url: "resources/list.json",
+                type: 'GET',
+                success: function onData (data) {
+
+                    if(data){
+                        let list = data.components;
+                        let dataKey=Object.keys(list); // json의 key값과 data-section값 동기화필요
+
+                        dataKey.forEach((key)=>{
+                            list[key].forEach((item)=>{
+                                $("#uiList").find("[data-section="+ key +"]").find("ul").append(setItems(item));
+                            });
+                        })
+                    }
+                },
+                error: function onError (error) {
+                    console.error(error);
+                }
+            });
+        });
+
+        function setItems(data){
+            let html="";
+            html+=
+            "<li>"+
+                "<a target='_blanck' href="+data.link+">"+data.title+"</a>"+
+            "</li>";
+
+            return html;
+        }
+
+
+    </script>
+
+    <style>
+        .ui-list{ width: 100%; }
+        .ui-list h2{font-size: 20px; /* background-color: antiquewhite; */ padding: 10px;}
+        .ui-list ul{width: 100%;}
+        .ui-list ul li{width: 100%; padding: 5px 10px; font-size: 16px;}
+    </style>
+
+    <div id="uiList" class="ui-list">
+        <div class="ui-list-section" data-section="atom">
+            <h2>atom</h2>
+            <ul></ul>
+        </div>
+        <div class="ui-list-section" data-section="molecule">
+            <h2>molcule</h2>
+            <ul></ul>
+        </div>
+        <div class="ui-list-section" data-section="organism">
+            <h2>organism</h2>
+            <ul></ul>
+        </div>
+    </div>
+    <!-- <a href="components/atoms/inputText/inputText.html">inputTExt</a> -->
 </body>
 </html>

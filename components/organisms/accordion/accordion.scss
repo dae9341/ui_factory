@@ -1,0 +1,52 @@
+.accordion{
+    width: 100%;
+    &-section{
+        &.active{
+            .accordion-section-button{
+                background-color: #ccc;
+                &::after{transform: translateY(-50%)rotate(180deg);}
+            }
+            .accordion-section-panel{display: block;}
+        }
+
+        &-button{
+            position: relative;
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            text-align: left;
+            border: none;
+            outline: none;
+            transition: 0.4s;
+            &::after{content:''; background: url(../../../resources/images/icon_arrow.png) 0 0 no-repeat; background-size: 16px auto; width: 16px; height: 16px; display: block; position: absolute; top:50%; right: 10px; transform: translateY(-50%); transition: all 0.5s;}  
+
+        }
+        &-panel{
+            padding: 0 18px;
+            background-color: white;
+            display: none;
+            overflow: hidden;
+        }
+    }
+
+    &[data-accordion-ani="slide"]{
+        .accordion-section{
+            &-panel{ display: block; max-height: 0;}
+            &.active{
+                .accordion-section-panel{max-height: 300px; transition: all 1s;}
+            }
+        }
+    }
+    &[data-accordion-ani="fadeIn"]{
+        .accordion-section{
+            &-panel{display: block; height: 0;opacity: 0;}
+            &.active{
+                .accordion-section-panel{height: auto; opacity: 1; transition: all 1s;}
+            }
+        }
+
+    }
+
+}

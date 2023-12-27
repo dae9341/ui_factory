@@ -1,0 +1,41 @@
+.designSelect{
+
+    $bgColor: #fff;
+    $activeColor: #eee;
+    $border:1px solid #d1d1d1;
+    $borderRadi:5px;
+    $selectHeight: 40px;
+    position: relative;
+
+    &-select{
+        width: 100%;
+        height: $selectHeight;
+        border-radius: $borderRadi;
+        background-color: $bgColor;
+        border:$border; 
+        cursor: pointer;
+        &:hover{background-color: $activeColor;}
+    }
+    
+    &-option{
+        width: 100%;
+        display: none;
+        border-radius: $borderRadi;
+        position: absolute;
+        top:$selectHeight + 10px;
+        left: 0;
+        border:$border;
+        overflow: hidden;
+        &.active{
+            display: block;
+        }
+        &-label{
+            width: 100%;
+            label{width: 100%; cursor: pointer; display: block; border-bottom:$border; padding: 10px; box-sizing: border-box;
+                &:hover{background-color:$activeColor;}
+            }
+            &:last-child label{border-bottom: 0;}
+            input[type="radio"] { display: none; }
+        }
+    }
+}

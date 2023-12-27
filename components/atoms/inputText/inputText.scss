@@ -1,0 +1,15 @@
+$border:1px solid #d1d1d1;
+$height:40px;
+$radius:5px;
+$inactiveColor:$efefef;
+
+.input-text{
+    border:$border;
+    height: $height;  
+    width: 100%;
+    padding: 0 14px;
+    box-sizing: border-box;
+    border-radius: $radius;
+    &[readonly]{ background-color: $inactiveColor; }
+    &[disabled]{ background-color: $inactiveColor; }
+}

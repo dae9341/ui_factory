@@ -1,0 +1,27 @@
+{
+    "components":{
+        "atom" :[
+            {
+                "title":"inputText",
+                "link":"components/atoms/inputText/inputText.html"
+            },
+            {
+                "title":"textarea",
+                "link":"components/atoms/textarea/textarea.html"
+            }
+        ],
+        "molecule":[
+            {
+                "title":"designSelect",
+                "link":"components/molecules/designSelect/designSelect.html"
+            }
+    
+        ],
+        "organism":[
+            {
+                "title":"accordion",
+                "link":"components/organisms/accordion/accordion.html"
+            }
+        ]
+    }
+}
